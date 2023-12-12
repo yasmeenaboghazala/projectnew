@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "project",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart"  // Set the correct path to your main entry point
+        },
+        {
+            "name": "project (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "program": "lib/main.dart"  // Set the correct path to your main entry point
+        },
+        {
+            "name": "project (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "program": "lib/main.dart"  // Set the correct path to your main entry point
+        }
+    ]
+}
