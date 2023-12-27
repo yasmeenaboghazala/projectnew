@@ -64,89 +64,7 @@ class MyHomePage extends StatelessWidget {
                 ],
               ),
             ),
-            CarouselSlider(
-              items: [
-                Container(
-                  margin: const EdgeInsets.only(top: 8, right: 5),
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Color.fromARGB(255, 112, 170, 218),
-                          Color.fromARGB(255, 44, 133, 206),
-                          Color.fromARGB(255, 97, 169, 228),
-                          Color.fromARGB(255, 3, 71, 128),
-                        ]),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Column(
-                      children: [
-                        const Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              width: 120,
-                            ),
-                            Text(
-                              "سنتر الرحمه",
-                              style: TextStyle(
-                                color: Colors.orange,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w800,
-                              ),
-                            ),
-                            Text(
-                              "الان مع ",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const Text(
-                          " يمكنك حضور حصتك اونلاين مع اي معلم",
-                          style: TextStyle(color: Colors.white, fontSize: 14),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(left: 180),
-                          child: Text(
-                            "مع اختبارك",
-                            style: TextStyle(color: Colors.white, fontSize: 12),
-                          ),
-                        ),
-                        // const SizedBox(
-                        //   height: 9,
-                        // ),
-                        Padding(
-                            padding: const EdgeInsets.only(right: 160),
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              child: const Text(
-                                "انضم",
-                                style:
-                                    TextStyle(color: Colors.blue, fontSize: 22),
-                              ),
-                            ))
-                      ],
-                    ),
-                  ),
-                )
-              ],
-              options: CarouselOptions(
-                height: 150,
-                enlargeCenterPage: true,
-                autoPlay: true,
-                aspectRatio: 16 / 9,
-                autoPlayCurve: Curves.fastOutSlowIn,
-                enableInfiniteScroll: true,
-                autoPlayAnimationDuration: const Duration(milliseconds: 800),
-              ),
-            ),
+            slider(),
             Directionality(
               textDirection: TextDirection.rtl,
               child: Container(
@@ -293,11 +211,102 @@ class MyHomePage extends StatelessWidget {
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 2,
-                  itemBuilder: (BuildContext context, int index) =>
-                      const card()),
+                  itemBuilder: (BuildContext context, int index) => card()),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class slider extends StatelessWidget {
+  const slider({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return CarouselSlider(
+      items: [
+        Container(
+          margin: const EdgeInsets.only(top: 8, right: 5),
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color.fromARGB(255, 112, 170, 218),
+                  Color.fromARGB(255, 44, 133, 206),
+                  Color.fromARGB(255, 97, 169, 228),
+                  Color.fromARGB(255, 3, 71, 128),
+                ]),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Align(
+            alignment: Alignment.bottomLeft,
+            child: Column(
+              children: [
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: 120,
+                    ),
+                    Text(
+                      "سنتر الرحمه",
+                      style: TextStyle(
+                        color: Colors.orange,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    Text(
+                      "الان مع ",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const Text(
+                  " يمكنك حضور حصتك اونلاين مع اي معلم",
+                  style: TextStyle(color: Colors.white, fontSize: 14),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 180),
+                  child: Text(
+                    "مع اختبارك",
+                    style: TextStyle(color: Colors.white, fontSize: 12),
+                  ),
+                ),
+                // const SizedBox(
+                //   height: 9,
+                // ),
+                Padding(
+                    padding: const EdgeInsets.only(right: 160),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "انضم",
+                        style: TextStyle(color: Colors.blue, fontSize: 22),
+                      ),
+                    ))
+              ],
+            ),
+          ),
+        )
+      ],
+      options: CarouselOptions(
+        height: 150,
+        enlargeCenterPage: true,
+        autoPlay: true,
+        aspectRatio: 16 / 9,
+        autoPlayCurve: Curves.fastOutSlowIn,
+        enableInfiniteScroll: true,
+        autoPlayAnimationDuration: const Duration(milliseconds: 800),
       ),
     );
   }

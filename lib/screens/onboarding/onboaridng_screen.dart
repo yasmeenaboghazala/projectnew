@@ -1,4 +1,5 @@
 import 'package:bussines/screens/MyHomePage.dart';
+import 'package:bussines/screens/login.dart';
 import 'package:bussines/screens/navigation_screen.dart';
 import 'package:bussines/screens/onboarding/components/widget_1.dart';
 import 'package:bussines/screens/onboarding/components/widget_2.dart';
@@ -129,7 +130,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(
-            builder: (context) => NavigationScreen(),
+            builder: (context) => login(),
           ),
           (route) => false);
       setState(() {});

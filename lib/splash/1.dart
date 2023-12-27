@@ -1,5 +1,7 @@
+import 'package:bussines/screens/navigation_screen.dart';
 import 'package:bussines/screens/onboarding/onboaridng_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:bussines/shared/Shard_prefrence.dart';
 
 class splash extends StatefulWidget {
   const splash({super.key});
@@ -13,12 +15,17 @@ class _splashState extends State<splash> {
     super.initState();
 
     // قم بتأخير التنفيذ لمدة 5 ثوانٍ باستخدام Future.delayed
-    Future.delayed(const Duration(seconds: 4), () {
-      // بعد مضي 5 ثوانٍ، قم بالانتقال إلى الصفحة الثانية
+    Future.delayed(const Duration(seconds: 5), () {
+      Widget start;
+      if (shard.pref.getString("email") != null) {
+        start = NavigationScreen();
+      } else {
+        start = OnBoardingScreen();
+      }
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => OnBoardingScreen(),
+          builder: (context) => start,
         ),
       );
     });

@@ -2,8 +2,6 @@ import 'package:bussines/screens/MyHomePage.dart';
 import 'package:bussines/splash/1.dart';
 import 'package:flutter/material.dart';
 
-import 'onboarding/components/widget_1.dart';
-
 class NavigationScreen extends StatefulWidget {
   NavigationScreen({super.key});
 

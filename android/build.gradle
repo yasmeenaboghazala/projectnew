@@ -1,3 +1,54 @@
+// buildscript {
+//     ext.kotlin_version = '1.7.10'
+//     repositories {
+//         google()
+//         mavenCentral()
+//     }
+
+//     dependencies {
+//         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+//         compile files('app/libs/junit-4.12-JavaDoc.jar')
+//         classpath 'com.android.tools.build:gradle:4.2.0'
+//         implementation files('app/libs/junit-4.12-JavaDoc.jar')
+//     }
+// }
+// apply plugin: 'maven'
+// allprojects {
+//     repositories {
+//         google()
+//         mavenCentral()
+//     }
+// }
+// rootProject.buildDir = '../build'
+// subprojects {
+//     project.buildDir = "${rootProject.buildDir}/${project.name}"
+// }
+// subprojects {
+//     project.evaluationDependsOn(':app')
+// }
+
+// tasks.register("clean", Delete) {
+//     delete rootProject.buildDir
+// }
+
+// android {
+//     defaultConfig {
+//         multiDexEnabled true
+//     }
+//     compileSdkVersion 31
+//     buildToolsVersion '31.0.0'
+
+//     defaultConfig {
+//         // Add your application ID, version code, version name, etc.
+//     }
+
+//     buildTypes {
+//         release {
+//             // Add release-specific configurations if needed
+//         }
+//     }
+// }
+
 buildscript {
     ext.kotlin_version = '1.7.10'
     repositories {
@@ -6,6 +57,7 @@ buildscript {
     }
 
     dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }

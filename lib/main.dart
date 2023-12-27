@@ -1,8 +1,11 @@
-import 'package:bussines/health/saa.dart';
+import 'package:bussines/shared/Shard_prefrence.dart';
 import 'package:bussines/splash/1.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  shard.init();
+
   runApp(const MyApp());
 }
 
@@ -19,10 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Directionality(
-        textDirection: TextDirection.rtl,
-        child: page2(),
-      ),
+      home: Directionality(textDirection: TextDirection.rtl, child: splash()),
     );
   }
 }
